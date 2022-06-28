@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Macondo", cursive;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #333;
+    transition: .5s;
+}
+
+.container {
+    position: relative;
+    width: 70px;
+    height: 350px;
+    background: #fff;
+    border-radius: 35px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, .1);
+}
+
+.container ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.container ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+}
+
+.container ul li a .icon {
+    display: block;
+    position: relative;
+    line-height: 75px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.container ul li.active a .icon {
+    color: #fff;
+}
+
+.container ul li a .icon i {
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+.container ul li a .title {
+    position: absolute;
+    top: 50%;
+    left: 110px;
+    background: #fff;
+    padding: 5px 10px;
+    transform: translateY(-50%);
+    border-radius: 6px;
+    transition: 0.5s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container ul li:hover a .title {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-25px, -58%);
+}
+
+.container ul li:hover a .title::before {
+    content: "";
+    position: absolute;
+    top: 48%;
+    left: -5px;
+    transform: rotate(45deg) translateY(-50%);
+    height: 6px;
+    width: 6px;
+    background: #fff;
+    border-radius: .5px;
+}
+
+.container ul .indicator {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 70px;
+    height: 70px;
+    transition: 0.5s;
+}
+
+.container ul .indicator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.container ul li:nth-child(1).active ~ .indicator {
+    transform: translateY(calc(70px * 0));
+}
+
+.container ul li:nth-child(2).active ~ .indicator {
+    transform: translateY(calc(70px * 1));
+}
+
+.container ul li:nth-child(3).active ~ .indicator {
+    transform: translateY(calc(70px * 2));
+}
+
+.container ul li:nth-child(4).active ~ .indicator {
+    transform: translateY(calc(70px * 3));
+}
+
+.container ul li:nth-child(5).active ~ .indicator {
+    transform: translateY(calc(70px * 4));
+}
+
+.container ul li:nth-child(1).active ~ .indicator::before {
+    background-color: #f53b57;
+}
+
+.container ul li:nth-child(2).active ~ .indicator::before {
+    background-color: #663bf5;
+}
+
+.container ul li:nth-child(3).active ~ .indicator::before {
+    background-color: #47f53b;
+}
+
+.container ul li:nth-child(4).active ~ .indicator::before {
+    background-color: #3b6df5;
+}
+
+.container ul li:nth-child(5).active ~ .indicator::before {
+    background-color: #f5a13b;
+}
+
+
